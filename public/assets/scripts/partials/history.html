@@ -1,0 +1,111 @@
+<!-- Navigation -->
+
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<link href="css/jquery-ui.theme.min.css" rel="stylesheet"/>
+<nav role="navigation">
+  <div id="menuToggle">
+    <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+    <input type="checkbox" />
+    
+    <!--
+    Some spans to act as a hamburger.
+    
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    -->
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+    <ul id="menu">
+        <li class=""  ng-class="{active: $route.current.activetab == 'dashboard'}">
+          <a href="#/dashboard"  ng-class="{active: $route.current.activetab == 'dashboard'}">Dashboard</a>
+        </li>
+        <li class=""  ng-class="{active: $route.current.activetab == 'profile'}">
+          <a href="#/profile" ng-class="{active: $route.current.activetab == 'profile'}">Profile</a>
+        </li>
+        <li class=""  ng-class="{active: $route.current.activetab == 'history'}">
+          <a href="#/history" ng-class="{active: $route.current.activetab == 'history'}">History</a>
+        </li>
+        <li class="">
+          <a href="#">Contact Us</a>
+        </li>
+        <li class="">
+          <a href="#" ng-click="logout();">Logout</a>
+        </li>
+    </ul>
+  </div>
+</nav>
+  <!-- End Navigation-->
+<!--<div class="breadcrumbs" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <i class="ace-icon fa fa-home home-icon"></i>
+            <a href="#">Home</a>
+        </li>
+        <li class="active">Dashboard</li>
+    </ul>
+</div>--> 
+<div class="page-content">
+    <div class="">
+        <div class="form-group">
+    <label for="exampleInputEmail1">Date:</label>
+    <input type="text" style="margin: 0 auto;width: 50%;" class="form-control start" id="" placeholder="Date">
+    <input class="btn btn-sm btn-default" style="margin-top: 5px;" type="button" ng-click="submit()" value="Submit">
+  </div>
+        <div class="col-sm-10 col-sm-offset-1">
+        <table class="zui-table" ng-if="rows">
+        	<thead>
+        		<tr>
+        			<td>Ac No</td>
+        			<td>Amount</td>
+        			<td>Entry Time</td>
+        			<td>Remarks</td>
+        			<td>Status</td>
+        		</tr>
+        	</thead>
+        	<tbody>
+        		<tr ng-repeat="row in rows">
+        			<td>{{row.ac_no}}</td>
+        			<td>{{row.amount}}</td>
+        			<td>{{row.entry_time}}</td>
+        			<td>{{row.remarks}}</td>
+        			<td>{{row.status==='D'?'Progress':(row.status==='R'?'Rejected':(row.status==='A'?'Approved':'Invalid'))}}</td>
+    			
+        		</tr>
+        	</tbody>
+  		</table>
+  		<div ng-if="!rows">No Data To Display</div>
+        </div>
+    </div>
+</div>
+<style>
+.zui-table {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+}
+.zui-table thead th {
+    background-color: #DDEFEF;
+    border: solid 1px #DDEEEE;
+    color: #336B6B;
+    padding: 10px;
+    text-align: left;
+    text-shadow: 1px 1px 1px #fff;
+}
+.zui-table tbody td {
+    border: solid 1px #DDEEEE;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+}
+</style>
+<!-- /.page-content -->

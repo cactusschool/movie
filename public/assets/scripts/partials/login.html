@@ -1,0 +1,74 @@
+<div class="cont_login" ng-controller="authCtrl">
+    <div class="cont_info_log_sign_up">
+        <div class="col_md_login">
+            <div class="cont_ba_opcitiy">
+
+                <h2>LOGIN</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+            </div>
+        </div>
+        <div class="col_md_sign_up">
+            <div class="cont_ba_opcitiy">
+                <h2>SIGN UP</h2>
+
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="cont_back_info">
+        <div class="cont_img_back_grey">
+            <img src="public/assets/scripts/images/login.jpg" alt="" />
+        </div>
+
+    </div>
+    <div class="cont_forms">
+        <div class="cont_img_back_">
+            <img src="public/assets/scripts/images/login.jpg" alt="" />
+        </div>
+        <div class="cont_form_login col-md-12">
+            <form name="signin" autocomplete="off">
+                <a href="#" onclick="ocultar_login_sign_up()">
+                    <i class="material-icons">&#xE5C4;</i>
+                </a>
+                <h2>LOGIN</h2>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Email" ng-model="user.email" required/>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" type="password" placeholder="Password" ng-model="user.password" required/>
+                </div>
+                <button class="btn_login" ng-click="doLogin(user)">LOGIN</button>
+            </form>
+        </div>
+
+        <div class="cont_form_sign_up col-md-12">
+            <form name="signup" autocomplete="off">
+                <a href="#" onclick="ocultar_login_sign_up()">
+                    <i class="material-icons">&#xE5C4;</i>
+                </a>
+                <h2>SIGN UP</h2>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Email" ng-model="signup.email" required/>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Name" ng-model="signup.name" required/>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" placeholder="Password" ng-model="signup.password" required/>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" placeholder="Confirm Password" ng-model="signup.cpassword" required/>
+                </div>
+                <button class="btn_sign_up" ng-click="signUp(signup)">SIGN UP</button>
+            </form>
+        </div>
+    </div>
+
+</div>
